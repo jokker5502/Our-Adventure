@@ -1,0 +1,375 @@
+/* --- CONFIGURACIÓN GLOBAL Y FUENTES --- */
+:root {
+    --bg-color: #FFEBF0; /* Rosa pastel de fondo */
+    --text-color: #2F2E41; /* Azul oscuro para texto */
+    --primary-color: #cc76cc; /* Rosa más fuerte para acentos */
+    --card-bg: #FFFFFF;
+    --font-main: 'Nunito', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    cursor: none; /* Ocultamos el cursor original para usar el sprite */
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #e04a70;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 5em;
+    color: var(--text-color);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text .subtitle {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+#contador {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: 800;
+    color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- ESTILO GENERAL DE LAS SECCIONES DE CONTENIDO --- */
+.content-sections {
+    padding: 60px 0;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+section h2 {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* --- ELEMENTOS INTERACTIVOS (BOTONES, ETC) --- */
+button {
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-family: var(--font-main);
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a495e;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    width: 60%;
+    margin: 10px 0 15px 0;
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+
+/* --- ESTILOS ESPECÍFICOS --- */
+#mapa-aventuras {
+    height: 450px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+#galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+#galeria-fotos.locked {
+    filter: blur(8px);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#galeria-fotos img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#poema-diario {
+    font-style: italic;
+    font-size: 1.1em;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: left;
+}
+
+/* --- SPRITE Y JUEGO --- */
+#sprite-cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+
+    body {
+        /* Reducimos el padding general en pantallas pequeñas */
+        padding: 0;
+    }
+
+    .main-container {
+        /* Hacemos que el contenedor principal ocupe casi todo el ancho */
+        padding: 0 15px;
+    }
+
+    .navbar {
+        /* Hacemos que los elementos de la barra de navegación se apilen */
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        /* Reducimos el espacio entre los enlaces */
+        gap: 20px;
+        font-size: 0.9em;
+    }
+
+    .hero-section {
+        /* ¡La parte más importante!
+           La ilustración se pondrá debajo del texto en lugar de al lado. */
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .hero-text .subtitle, #contador {
+        /* Centramos y ajustamos el ancho de los textos */
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-text h1 {
+        /* Reducimos el tamaño del título para que quepa bien */
+        font-size: 3.5em; 
+    }
+
+    section {
+        /* Reducimos el padding de todas las secciones */
+        padding: 30px 20px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+}
+
+#razones-section h2 {
+    /* Hacemos el título un poco más sutil para dar protagonismo al texto */
+    font-size: 2.2em;
+    border-bottom: none; /* Quitamos la línea divisoria para un look más limpio */
+}
+
+#razon-texto {
+    /* Esta es la parte clave del nuevo diseño */
+    background-color: #fdf5f7; /* Un fondo rosa extremadamente suave */
+    border-left: 4px solid var(--primary-color); /* Borde decorativo a la izquierda */
+    border-radius: 8px;
+    padding: 30px;
+    margin: 20px auto; /* Centra la tarjeta y le da espacio */
+    max-width: 80%;
+    
+    /* Estilos de la fuente para que sea más elegante */
+    font-size: 1.8em; /* Mucho más grande */
+    font-style: italic; /* Letra cursiva */
+    font-weight: 400;
+    color: #5c5b6f; /* Un tono de azul más suave que el principal */
+    
+    min-height: 80px; /* Evita que el botón "salte" cuando aparece el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Transición suave para la aparición del texto */
+    transition: all 0.4s ease-in-out;
+}
+
+/* En style.css, al final del archivo */
+#aventuras-futuras .frasco-container {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#aventuras-futuras #frasco-imagen {
+    transition: transform 0.3s ease;
+}
+
+#aventuras-futuras #frasco-imagen:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+#mensaje-aventura {
+    margin-top: 30px;
+    perspective: 1000px;
+}
+
+#mensaje-aventura.hidden {
+    display: none;
+}
+
+.papelito {
+    background-color: #f8d2ed; /* Color de post-it */
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-5deg) scale(0.5);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    font-size: 1.5em;
+    font-style: italic;
+    color: #050505;
+}
+
+.papelito.visible {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-2deg) scale(1);
+    opacity: 1;
+}
+
+/* En tu archivo style.css, al final de todo */
+
+.spotify-button {
+    display: inline-block; /* Permite darle padding y otras propiedades de bloque */
+    background-color: #1DB954; /* El color verde oficial de Spotify */
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px; /* Lo hace un botón tipo "píldora" */
+    font-weight: 800;
+    font-family: var(--font-main);
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.spotify-button:hover {
+    transform: scale(1.05); /* Se agranda un poco al pasar el mouse */
+    background-color: #1ed760; /* Un verde un poco más brillante */
+}

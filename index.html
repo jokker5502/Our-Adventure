@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <nav class="navbar">
+            <div class="logo">
+                I & M
+            </div>
+            <ul class="nav-links">
+                <li><a href="#nuestra-historia">Nuestra Historia</a></li>
+                <li><a href="#recuerdos">Recuerdos</a></li>
+                <li><a href="#mapa-section">Aventuras</a></li>
+            </ul>
+            <a href="#playlist-section" class="button-primary">Nuestra Música</a>
+        </nav>
+
+        <header class="hero-section" id="nuestra-historia">
+            <div class="hero-text">
+                <h1 id="titulo-principal">Nuestra<br>Aventura</h1>
+                <p class="subtitle">Esta es una pequeña parte de nuestro universo, creada especialmente para ti. Siempre serás mi inspiración y mi alegría.</p>
+                <div id="contador">Cargando nuestro tiempo juntos...</div>
+            </div>
+            <div class="hero-image">
+                <img src="couple.png" alt="Ilustración de pareja">
+            </div>
+        </header>
+
+        <main class="content-sections">
+            
+            <section id="mensajes-diarios">
+                <h2 id="frase-diaria"></h2>
+                <blockquote id="poema-diario"></blockquote>
+            </section>
+            
+            <section id="galeria-secreta" class="recuerdos">
+                <h2>🔐 Galería de Recuerdos Bajo Llave</h2>
+                <div id="unlock-container">
+                    <p>Para desbloquear nuestros recuerdos, responde la pregunta secreta:</p>
+                    <label for="pregunta-secreta">¿Cuales son nuestros nombres de viejitos?</label><br>
+                    <input type="text" id="respuesta-secreta" placeholder="Tu respuesta...">
+                    <button id="btn-unlock">Desbloquear</button>
+                    <p id="feedback-respuesta"></p>
+                </div>
+                <div id="galeria-fotos" class="locked">
+                    <img src="fotos/foto1.jpg" alt="Recuerdo 1">
+                    <img src="fotos/foto2.jpg" alt="Recuerdo 2">
+                    <img src="fotos/foto3.jpg" alt="Recuerdo 3">
+                    <img src="fotos/foto4.jpg" alt="Recuerdo 4">
+                    <img src="fotos/foto5.jpg" alt="Recuerdo 5">
+                    <img src="fotos/foto6.jpg" alt="Recuerdo 6">
+                </div>
+            </section>
+
+            <section id="mapa-section">
+                <h2>🗺️ Nuestro Mapa de Aventuras</h2>
+                <div id="mapa-aventuras"></div>
+            </section>
+            
+            <section id="razones-section">
+                <h2>¿Por qué te amo hoy?</h2>
+                <h2>Y 100 más..</h2>
+                <p id="razon-texto">Haz clic en el botón para descubrirlo...</p>
+                <button id="btn-razon">Dame una razón</button>
+            </section>
+
+            <section id="aventuras-futuras">
+                <h2>El Frasco de Nuestras Futuras Aventuras</h2>
+                <p>Haz clic en el frasco para descubrir un plan que sueño hacer contigo.</p>
+                <div class="frasco-container">
+                    <img src="fotos\icons8-milk-can-64.png" alt="frasco de deseos" id="frasco-imagen">
+                </div>
+                <div id="mensaje-aventura" class="hidden">
+                    <div class="papelito">
+                        <p id="texto-aventura"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="playlist-section">
+                <h2>Nuestra Música</h2>
+                <a href="https://open.spotify.com/playlist/2TtmPQqCUs5SQqAqDEi2jH?si=0ade01aa286241b3&pt=07ac824ac80e987dda49600a9b30ca3b" target="_blank" class="spotify-button">
+                    🎵 Abrir nuestra playlist en Spotify</a>
+            </section>
+
+        </main>
+    </div>
+    
+    <img src="sprite.png" id="sprite-cursor" alt="sprite">
+    <script src="script.js"></script>
+</body>
+</html>
